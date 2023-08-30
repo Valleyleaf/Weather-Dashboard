@@ -34,3 +34,12 @@
 
 //Inputs and trigger go here
 
+
+
+// Logic will be as follows. Upon entering a city in the searchbox, the value will be added to a variable
+// this will then be passed to the weather API for results. Once the results are returned
+// /parse them out to 5 seperate boxes representing Monday to Friday.
+// There will be a masterbox above the days showing more detailed information.
+// Script will then create a button/item below the searchbar in a seperate div.
+// This div will hold up to 10 previous results. Once additional results are inserted, it will
+// get rid of the oldest one.
