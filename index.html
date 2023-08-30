@@ -4,20 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Report</title>
+    <link rel="stylesheet" href="assets/reset.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="icon" href="assets/visualassets/SunImage.png">
 </head>
 
 
-<body>
+<body class = flex-container-column>
     <header>
-
+        <h2 id="title">Weather <br> Dashboard </h2>
     </header>
 
-        <article>
+    <nav class="border-class-content">
+        <div class='flex-container flex-nav'>
+            <button id="btn1">Item 1</button>
+            <button id="btn2">Item 2</button>
+            <button id="btn3">Item 3</button>
+            <button id="btn4">Item 4</button>
+        </div>       
+    </nav>
+    <div class="flex-container">
+        <aside>
+            <!-- Searchbar and history will go here. -->
+                <div id="searchbar">
+                <!-- Searchbar -->
+                <h1>Search for a city:</h1>
+                </div>
+                    <form class="text-margin-class">
+                        <input type="search" name="search" placeholder="Search...">
+                        <input type="submit" value="Search">
+                    </form>
+                <div id="history">
+                    <!-- History -->
+                    <p>History</p>
+                </div>
+        </aside>
 
+        <article >
+            <!-- Weather report will go here. -->
+            <div id="Overview">
+                <p>overview</p>
+            </div>
+            <div id="Main-Content">
+
+            </div>
         </article>
-
-    <footer>
-
+    </div>
+    <footer class="flex-container-column border-class-top">
+        <div class= 'footer-text-class'>       
+         <p class="text-margin-class">Copyright (c) Aston Andersson Dahllof 2023</p>
+         <p class="text-margin-class">506-555-5555</p>
+         <p class="text-margin-class">aston_dahllof@outlook.com</p>
+        </div>
     </footer>
 </body>
+<!-- Remember to add script. -->
 </html>
