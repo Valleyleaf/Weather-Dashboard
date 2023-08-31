@@ -18,8 +18,7 @@
 
 
 //Variables go here
-
-
+var searchbutton = document.getElementById('#search-button');
 
 
 
@@ -43,3 +42,9 @@
 // Script will then create a button/item below the searchbar in a seperate div.
 // This div will hold up to 10 previous results. Once additional results are inserted, it will
 // get rid of the oldest one.
+// If a user hits a previous search, it needs to automatically pull the result from the API.
+
+// What is needed here:
+// 1. A variable to hold the inserted text
+// 2. A variable to link to the search button
+// 3. an array to hold the last 3 results

@@ -15,38 +15,34 @@
         <h2 id="title">Weather <br> Dashboard </h2>
     </header>
 
-    <nav class="border-class-content">
-        <div class='flex-container flex-nav'>
-            <button id="btn1">Item 1</button>
-            <button id="btn2">Item 2</button>
-            <button id="btn3">Item 3</button>
-            <button id="btn4">Item 4</button>
-        </div>       
-    </nav>
+    <div class="border-class-content"></div>
+    <!-- The above can be repurposed as a Nav-bar if needed later down the line. -->
     <div class="flex-container">
-        <aside>
+        <aside class="overview-class-box">
             <!-- Searchbar and history will go here. -->
                 <div id="searchbar">
                 <!-- Searchbar -->
                 <h1>Search for a city:</h1>
                 </div>
-                    <form class="text-margin-class">
+                    <form id="search-button" class="text-margin-class">
                         <input type="search" name="search" placeholder="Search...">
                         <input type="submit" value="Search">
                     </form>
                 <div id="history">
                     <!-- History -->
-                    <p>History</p>
+                    
                 </div>
         </aside>
         <!-- Divider line/ Above is aside with searchbar, below is flexbox with results. -->
         <article >
             <!-- Weather report will go here. -->
-            <div id="Overview">
-                <p>overview</p>
-            </div>
-            <div id="Main-Content">
-
+                <div id="Overviewbox" class="overview-class-box">Overview Item</div>
+            <div class="flex-container">
+                <div id='day-monday' class="day-of-the-week-class-box">Monday</div>
+                <div id='day-tuesday' class="day-of-the-week-class-box">Tuesday</div>
+                <div id='day-wednesday' class="day-of-the-week-class-box">Wednesday</div>
+                <div id='day-thursday' class="day-of-the-week-class-box">Thursday</div>
+                <div id='day-friday' class="day-of-the-week-class-box">Friday</div>
             </div>
         </article>
     </div>

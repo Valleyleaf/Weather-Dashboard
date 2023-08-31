@@ -1,10 +1,12 @@
 :root{
-    background-color: rgb(211, 213, 214);
     font-family: Arial, Helvetica, sans-serif;
     --skyBlue: #8bebe3;
     --MenuWhite: #e5e6d5;
     --buttonWhite: #ffffff;
     --articleGrey: #afafaf;
+    --menuBlue: #7982d8;
+    --menuBorder: #353c83;
+    background-color: var(--menuBorder);
 
     
 }
@@ -36,6 +38,7 @@ h2{
     border-bottom: solid black;
     border-top: solid black;
     border-width: 3px;
+    background-color: var(--skyBlue);
 }
 
 .border-class-top{
@@ -43,22 +46,46 @@ h2{
     border-width: 3px;
 }
 
-body{
+.day-of-the-week-class-box{
+    background-color: var(--menuBlue);
+    width: 220px;
+    height: 180px;
+    margin: 10px;
+    border: solid var(--menuBorder);
+}
+
+.overview-class-box{
+    background-color: var(--menuBlue);
+    width: 87%;
+    height: 20%;
+    margin: 10px;
+    border: solid var(--menuBorder);
 
 }
 
 aside{
-    background-color: bisque;
-    width: 35%;
-    height: 1000px;
-    
+    background-color: var(--menuBlue);
+    width: 50%;
+    height: 20%;
+    margin: 10px;
+    border: solid var(--menuBorder);
 }
 
 .flex-container{
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    flex-direction: row;
 }
+
+/* .gridcontainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    grid-template-rows: 200px 50px;
+    
+
+} */
 
 .flex-container-column{
     display: flex;
@@ -73,7 +100,7 @@ aside{
 
 article{
     display: block;
-    background-color: var(--articleGrey);
+    background-color: var(--buttonWhite);
     width: 100%;
     height: 1000px;
     
