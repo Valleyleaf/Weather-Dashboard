@@ -19,12 +19,29 @@
 
 //Variables go here
 var searchbutton = document.getElementById('#search-button');
+var daymonday = document.getElementById('day-monday');
+var daytuesday = document.getElementById('day-tuesday');
+var daywednesday = document.getElementById('day-wednesday');
+var daythursday = document.getElementById('day-thursday');
+var dayfriday = document.getElementById('day-friday');
+
+var week = [daymonday, daytuesday, daywednesday, daythursday, dayfriday]
+
+for (let i = 0; i < week.length; i++) {
+    console.log(week[i]);}
+
+console.log('script linked')
 
 
 
 
 //Main script goes here
 
+
+
+//_______________________________
+
+//History Function goes here
 
 
 
