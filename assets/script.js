@@ -14,11 +14,23 @@
 
 
 
+// API goes here
 
+var weatherKey = "ea99ed525bcde0ba4e8f221e94249590";
+var apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=SaintJohn";
+
+async function checkWeather(){
+    var response = await fetch(apiUrl + `&appid=${weatherKey}`);
+    var data = await response.json
+
+    console.log(data);
+    event.preventDefault();
+}
 
 
 //Variables go here
-var searchbutton = document.getElementById('#search-button');
+var searchbutton = document.getElementById('search-button');
+var searchBox = document.getElementById('searchField');
 var daymonday = document.getElementById('day-monday');
 var daytuesday = document.getElementById('day-tuesday');
 var daywednesday = document.getElementById('day-wednesday');
@@ -30,14 +42,8 @@ var week = [daymonday, daytuesday, daywednesday, daythursday, dayfriday]
 for (let i = 0; i < week.length; i++) {
     console.log(week[i]);}
 
-console.log('script linked')
-
-
-
 
 //Main script goes here
-
-
 
 //_______________________________
 
@@ -47,8 +53,16 @@ console.log('script linked')
 
 //_______________________________
 
+// source: https://www.youtube.com/watch?v=MIYQR-Ybrn4
+
+// Location function goes here
 
 //Inputs and trigger go here
+
+searchbutton.addEventListener("click", function(event){
+    var city = searchbox.value.trim();
+    console.log('city Value: ' + city);
+});
 
 
 
