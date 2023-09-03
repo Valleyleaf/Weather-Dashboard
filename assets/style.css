@@ -61,9 +61,20 @@ h2{
     border: solid var(--menuBorder);
 }
 
+.overview-class-box1{
+    background-color: var(--menuBlue);
+    width: 19%;
+    max-width: 20%;
+    height: 20%;
+    margin: 10px;
+    border: solid var(--menuBorder);
+
+}
+
 .overview-class-box{
     background-color: var(--menuBlue);
-    width: 87%;
+    width: 59%;
+    max-width: 60%;
     height: 20%;
     margin: 10px;
     border: solid var(--menuBorder);
