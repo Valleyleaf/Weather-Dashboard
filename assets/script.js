@@ -17,7 +17,12 @@
 // API goes here
 
 var weatherKey = "ea99ed525bcde0ba4e8f221e94249590";
-var apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=SaintJohn";
+var apiUrl = "api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=" + weatherKey;
+var cityValue = null;
+    console.log("weatherkey is: "+ apiUrl);
+
+//http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key}
+var locationCurrentUser = null;
 
 async function checkWeather(){
     var response = await fetch(apiUrl + `&appid=${weatherKey}`);
@@ -59,10 +64,14 @@ for (let i = 0; i < week.length; i++) {
 
 //Inputs and trigger go here
 
-searchbutton.addEventListener("click", function(event){
-    var city = searchbox.value.trim();
-    console.log('city Value: ' + city);
-});
+ var retrieveUserInputCordinates = () => {
+    var cityInput = searchbox.value.trim();
+    if(!cityInput) return;
+    var userInputLocation = `http://api.openweathermap.org/geo/1.0/direct?q=${cityInput}&limit=5&appid=${weatherKey}`;
+
+ }
+
+searchbutton.addEventListener("click", retrieveUserInputCordinates);
 
 
 
