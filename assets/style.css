@@ -29,11 +29,11 @@ h2{
     color: var(--buttonWhite);
 }
 
-#Location-id{
+.Location-id{
     color: var(--buttonWhite);
     font-size: 20px;
     margin: 15px;
-
+    padding: 5px;
 }
 
 .border-class{

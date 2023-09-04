@@ -12,67 +12,66 @@
 // ```
 
 
-
-
-// API goes here
-
 var weatherKey = "ea99ed525bcde0ba4e8f221e94249590";
-var apiUrl = "api.openweathermap.org/data/2.5/forecast?lat=44.34&lon=10.99&appid=" + weatherKey;
-var cityValue = null;
-    console.log("weatherkey is: "+ apiUrl);
 
-//http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid={API key}
-var locationCurrentUser = null;
+// Below gets users location, this is the default input when loading the webpage.
+// navigator.geolocation.getCurrentPosition(position => {const { latitude, longitude} = position.coords;
+//     const url = `http://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&cnt=5&appid=${weatherKey}`
+//     //           http://api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt={cnt}&appid={API key}
+//     console.log(url)
+//     fetch(url).then(res => res.json()).then(data => {
+//         console.table(data);
+//     }).catch(() =>{
+//         console.log('Error retreving data, Error: 26');
+//     })
+// });
 
-async function checkWeather(){
-    var response = await fetch(apiUrl + `&appid=${weatherKey}`);
-    var data = await response.json
+// This variable holds the users input data. By default, I want it to be the users current location. I made a function above to make
+// This happen but it doesn't quite work. Will have to check why. For now, defaulting to Stockholm
+var userLocation = 'Stockholm'
 
-    console.log(data);
-    event.preventDefault();
+
+var apiGeo = `http://api.openweathermap.org/geo/1.0/direct?q=${userLocation}&limit=1&appid=${weatherKey}`;
+// http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=ea99ed525bcde0ba4e8f221e94249590
+console.log(apiGeo)
+
+// This function returns the geo pulled from apiGeo. This can be manipulated with the userLocation variable. This function
+// Can be used to extract the name of the city, latitute and longitute, along with some other data that I do not need for this project.
+async function getUserGeo(){
+    fetch(apiGeo).then(function (response){
+        console.log(response);
+        return response.json();
+    }).then(function (data){
+        console.log(data);
+        return data;
+    }).catch(function (error){
+        alert('Error 47. No response from Server')
+    })
+    
+
 }
 
-
-//Variables go here
-var searchbutton = document.getElementById('search-button');
-var searchBox = document.getElementById('searchField');
-var daymonday = document.getElementById('day-monday');
-var daytuesday = document.getElementById('day-tuesday');
-var daywednesday = document.getElementById('day-wednesday');
-var daythursday = document.getElementById('day-thursday');
-var dayfriday = document.getElementById('day-friday');
-
-var week = [daymonday, daytuesday, daywednesday, daythursday, dayfriday]
-
-for (let i = 0; i < week.length; i++) {
-    console.log(week[i]);}
-
-
-//Main script goes here
-
-//_______________________________
-
-//History Function goes here
+getUserGeo();
 
 
 
-//_______________________________
 
-// source: https://www.youtube.com/watch?v=MIYQR-Ybrn4
 
-// Location function goes here
 
-//Inputs and trigger go here
 
- var retrieveUserInputCordinates = () => {
-    var cityInput = searchbox.value.trim();
-    if(!cityInput) return;
-    var userInputLocation = `http://api.openweathermap.org/geo/1.0/direct?q=${cityInput}&limit=5&appid=${weatherKey}`;
 
- }
 
-searchbutton.addEventListener("click", retrieveUserInputCordinates);
 
+// var searchbutton = document.getElementById('search-button');
+// var searchBox = document.getElementById('searchField');
+// var daymonday = document.getElementById('day-monday');
+// var daytuesday = document.getElementById('day-tuesday');
+// var daywednesday = document.getElementById('day-wednesday');
+// var daythursday = document.getElementById('day-thursday');
+// var dayfriday = document.getElementById('day-friday');
+// var week = [daymonday, daytuesday, daywednesday, daythursday, dayfriday]
+// for (let i = 0; i < week.length; i++) {
+//     console.log(week[i]);}
 
 
 // Logic will be as follows. Upon entering a city in the searchbox, the value will be added to a variable
