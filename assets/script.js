@@ -18,44 +18,65 @@ var weatherKey = "ea99ed525bcde0ba4e8f221e94249590";
 // This happen but it doesn't quite work. Will have to check why. For now, defaulting to Stockholm
 
 
+
+
 // This function returns the geo pulled from apiGeo. This can be manipulated with the userLocation variable. This function
 // Can be used to extract the name of the city, latitute and longitute, along with some other data that I do not need for this project.
-async function getUserGeo(){
-    fetch(apiGeo).then(function (response){
-        // console.log(response);
+function getUserGeo(){
+    var apiGeoVariable = verifyLocation();
+    return fetch(apiGeoVariable).then(function (response){
+        console.log(response);
         return response.json();
     }).then(function (data){
         var cityName =data[0].name;
         var latitude =data[0].lat;
         var longitude =data[0].lon;
-
         var extractedData = [cityName, latitude, longitude]
-        // console.log(extractedData)
-
-        return [cityName, latitude, longitude];
+        console.log(extractedData)
+        // ExtractedData is correct, but does not get properly returned into manageData function? Need to figure out why.
+        return extractedData;
     }).catch(function (error){
-        alert('Error 47. No response from Server')
+        alert('Error 39. No response from Server')
     })
     
 
 }
 
-// getUserGeo().then(extracedData => {
-//     console.log('DATA: ', extractedData);
-// }).catch(error => {
-//     console.log('Error 64. Unable to handle returned data.');
-// })
+// This function returns CITY, LAT and LON to then be parsed through openweathermap. This information then will also need to be parsed.
+async function manageData(){
+    var dataArray = await getUserGeo();
+    // The above comes back undefined. FIX
+    // Below variables need to be populated with items from getUserGeo.
+    var inputNameData = dataArray[0];
+    var latitudeData = dataArray[1];
+    var longitudeData = dataArray[2];
+    console.log('Returned data in manageData is: ', inputNameData, latitudeData, longitudeData)
+    // Insert function here to display name.
+    const url = `http://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitudeData}&lon=${longitudeData}&cnt=5&appid=${weatherKey}`
+    console.log(url)
+    // Below fetches data and parses it out of const url
+    fetch(url).then(res => res.json()).then(data => {
+        console.table(data);
+    }).catch(() =>{
+        console.log('Error retreving data, Error: 61');
+    })
+}
 
-// on click, gets user input. Need to trim and also create error function.
-searchButton.on('click', function() {
+
+// Add error function here. Just a simple alert. Also trim user input. NOTE TO SELF, THIS TIES INTO; getUserGeo. Watch out for scope issues.
+function verifyLocation(){
     var userLocation = document.querySelector('#searchField').value;
     var apiGeo = `http://api.openweathermap.org/geo/1.0/direct?q=${userLocation}&limit=1&appid=${weatherKey}`;
-    console.log(apiGeo)
     console.log('user location is:', userLocation)
+    console.log('apiGeo is: ', apiGeo)
+    return apiGeo
+}
+
+
+// on click, gets user input. Need to trim and also create error function.
+searchButton.on('click', function () {
+    manageData();
 })
-
-
-
 
 
 
@@ -70,6 +91,7 @@ searchButton.on('click', function() {
 //         console.log('Error retreving data, Error: 26');
 //     })
 // });
+// getCurrentPosition();
 
 // var searchbutton = document.getElementById('search-button');
 // var searchBox = document.getElementById('searchField');
