@@ -8,13 +8,13 @@ This project was for me to learn more about API's and data management. I think I
 
 Open in browser of your choice. Enter your city and the site will return a forecast.
 
-##Challenges
+## Challenges
 I still have issues with Javascript and accidentally making very bloated long-running functions. I think I did a better job this time around of applying my logic and doing some psudo-coding ahead of time. If I could go back, I would break down my functions even further to ensure easier readability and bugchecking. A repeating issue I am running into is making large chunks of code, only to realise after having completed about 80% of it, that I have written myself into a corner. A bad habit that I need to work on.
 
 
 ![image](https://github.com/Valleyleaf/Weather-Dashboard/assets/137734906/516657c5-f902-41fd-8a68-6e22be076292)
 
-##Additional features to be added.
+## Additional features to be added.
 I am hoping to find time to make this project a bit more complete. I want to add the missing icons and the history that was required for the technical portion of this. Some additional polish to the CSS and figuring out why my weatherAPI won't return a proper 5 day forecast instead of a 'every 3-hour' forecast is on my docket.
 
 
