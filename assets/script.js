@@ -37,6 +37,7 @@ function getUserGeo(){
     
 
 }
+// 
 
 // This function returns CITY, LAT and LON to then be parsed through openweathermap. This information then will also need to be parsed.
 // Note, inputNameData turned out to be completely pointless as I can get that date through the weatherAPI instead of the geo API. ld make this cleaner with more time.
